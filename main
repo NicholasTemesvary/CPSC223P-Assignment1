@@ -1,0 +1,26 @@
+import contacts
+
+contacts_list=[]
+while(1):
+    print(" *** EMPLOYEE CONTACT MAIN MENU")
+
+    print("1. Print list")
+    print("2. Add Contact")
+    print("3. Modify Contact")
+    print("4. Delete Contact")
+    print("5. Exit the Program")
+    print(" ")
+    print("Enter menu choice: ")
+    n=input().strip()
+    if(n=="1"):
+        contacts.print_list(contacts_list)
+    elif(n=="2"):
+        contacts_list=contacts.add_contact(contacts_list)
+    elif(n=="3"):
+        contacts_list=contacts.modify_contact(contacts_list)
+    elif(n=="4"):
+        contacts_list=contacts.delete_contact(contacts_list)
+    elif(n=="5"):
+        break
+    else:
+        print("Invalid operation")
