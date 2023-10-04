@@ -1,0 +1,43 @@
+#Nicholas Temesvary
+# 2/6/2023
+# The section of the code where the contacts are stored and manipulated
+
+def print_list(contacts):
+    print(" ")
+    print("================== CONTACT LIST ==================")
+    print(f'{"Index":8}{"First Name":22}{"Last Name":22}')
+    print("======  ====================  ====================")
+    for i in range(len(contacts)):
+        print(f'{str(i):8}{contacts[i][0]:22}{contacts[i][1]:22}')
+
+def add_contact(contacts):
+    q=[]
+    print("Enter first name")
+    q.append(input().strip())
+    print("Enter Last name")
+    q.append(input().strip())
+    contacts.append(q)
+    return contacts
+
+def modify_contact(contacts):
+    print("Enter the index number")
+    i=int(input().strip())
+    if(len(contacts)>i and i>=0):
+        print("Enter first name")
+        contacts[i][0]=input().strip()
+        print("Enter Last name")
+    else:
+        print("Invalid index number")
+        return contacts
+    contacts[i][1]=input().strip()
+    return contacts
+
+def delete_contact(contacts):
+    print("Enter the index number")
+    print(" ")
+    i=int(input().strip())
+    if(len(contacts)>i and i>=0):
+        contacts.remove(contacts[i])
+    else:
+        print("Invalid index number")
+    return contacts
